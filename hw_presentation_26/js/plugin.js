@@ -49,10 +49,7 @@ var myEvent = new Event('addLi'),
 	ul = document.querySelector('ul');
 	
 
-	btnGenerate.addEventListener('addLi', addFunc);
-
-	function addFunc(e){	
-		
+	function addLiFunc(e){	
 		var child = document.createElement('li'),
 			counter = ul.childElementCount;
 
@@ -61,5 +58,9 @@ var myEvent = new Event('addLi'),
 		ul.appendChild(child);				
 	}
 
-	btnGenerate.dispatchEvent(myEvent);
-	var event = new Event('click');
+	ul.addEventListener('addLi', addLiFunc);
+	btnGenerate.addEventListener('click', function(){
+		ul.dispatchEvent(myEvent);
+	})
+	
+	
