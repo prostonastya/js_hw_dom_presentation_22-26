@@ -1,14 +1,10 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-  console.clear();
-  // ваш код поместить тут
-
-
   // Презентация 22
 	// Задача 1
+
   function isParent(parent,child){
-  	var parentTag = parent.localName;
-  	if (child.closest(parentTag) == parent){
+  	
+  	if (parent.contains(child)){
   		console.log(true)
   	} else{
   		console.log(false)
@@ -17,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   	isParent(document.body.children[0],document.querySelector('mark'));
 	isParent(document.querySelector('ul'),document.querySelector('mark'));
+
 
 	// Задача2
 
@@ -63,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		i++
 	}
 	
-});
+
 	// Задача с ООП
 
 	function SuperConstructor(node){

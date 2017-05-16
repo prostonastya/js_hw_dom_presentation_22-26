@@ -35,22 +35,21 @@ mark.classList.add('green');
 
 // 	// Задача 5 ????
 
-function Compare(a,b){
-	// ulChild[1].children[0].innerText - эл-т для сравнения
-	// a = a.children[0].innerText;
-	// b = b.children[0].innerText;
-	if (a.children[0].innerText < b.children[0].innerText) return -1;
-	if (a.children[0].innerText > b.children[0].innerText) return 1;	
-}
-var ul = document.getElementsByTagName('ul')[0],
-	ulChild = ul.getElementsByTagName('li');
+var ulChild = document.querySelectorAll('li'),
+	arr = [],
+	item = '';
 	
+	for (i = 0, max = ulChild.length; i < max; i++) {
+   		item = ulChild[i];
+   		arr.push(item.innerHTML);
+	}
+
+	arr.reverse();
+	for (i = 0, max = ulChild.length; i < max; i++) {
+   		item = ulChild[i];
+   		item.innerHTML = arr[i];
+	}	
 	
-	ulChild = Array.prototype.slice.call(ulChild);
-
-var newList = ulChild.sort(Compare);
-
-
 
 // 	// Задача 6
 
